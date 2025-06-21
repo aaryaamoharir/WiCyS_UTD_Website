@@ -14,6 +14,6 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Run the website (run these in the terminal)
 1. Open the terminal in VSCode 
-2. git clone ""
+2. git clone "https://github.com/aaryaamoharir/WiCyS_UTD_Website.git"
 3. npm install
 4. npm run dev
