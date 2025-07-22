@@ -1,21 +1,24 @@
 import React from 'react';
+import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
+
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-inter">
+    <div className="min-h-screen bg-white text-gray-900 font-mono">
       <script src="https://cdn.tailwindcss.com"></script>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-      <header className="bg-gradient-to-r from-purple-700 to-indigo-800 text-white p-4 shadow-lg sticky top-0 z-50 rounded-b-lg">
-        <nav className="container mx-auto flex justify-between items-center">
-          <div className="text-2xl font-bold rounded-md px-3 py-1 bg-white text-purple-700">WICS</div>
+      <header className="bg-transparent text-white p-4 shadow-lg sticky top-0 z-100 ">
+
+      <nav className="container mx-auto flex justify-between items-center">
+        <img src={wicysLogo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
           <ul className="hidden md:flex space-x-6">
-            <li><a href="#home" className="hover:text-purple-200 transition duration-300">Home</a></li>
-            <li><a href="#about" className="hover:text-purple-200 transition duration-300">About</a></li>
-            <li><a href="#news" className="hover:text-purple-200 transition duration-300">News</a></li>
-            <li><a href="#events" className="hover:text-purple-200 transition duration-300">Events</a></li>
-            <li><a href="#officers" className="hover:text-purple-200 transition duration-300">Officers</a></li>
-            <li><a href="#contact" className="hover:text-purple-200 transition duration-300">Contact</a></li>
+            <li><a href="#home" className="text-l hover:text-purple-300 transition duration-300">Home</a></li>
+            <li><a href="#about" className="text-l hover:text-purple-200 transition duration-300">About</a></li>
+            <li><a href="#news" className="text-l hover:text-purple-200 transition duration-300">News</a></li>
+            <li><a href="#events" className="text-l hover:text-purple-200 transition duration-300">Events</a></li>
+            <li><a href="#officers" className="text-l hover:text-purple-200 transition duration-300">Officers</a></li>
+            <li><a href="#contact" className="text-l hover:text-purple-200 transition duration-300">Contact</a></li>
           </ul>
           <div className="md:hidden">
             <button className="text-white focus:outline-none">
@@ -25,13 +28,39 @@ const App = () => {
         </nav>
       </header>
 
-      <section id="home" className="relative h-[60vh] md:h-[70vh] bg-gradient-to-br from-purple-600 to-indigo-900 flex items-center justify-center text-center p-4">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      <section id="home" className="relative h-[60vh] md:h-[70vh] bg-gradient-to-t from-purple-300 to-indigo-900 flex items-center justify-center text-center p-4">
+        <div className="absolute inset-0 opacity-30"></div>
+        <div className="absolute inset-0 z-0 pointer-events-none">
+  {[...Array(100)].map((_, i) => {
+    const top = Math.random() * 100;
+    const left = Math.random() * 100;
+    const size = Math.random() * 6 + 2; // 2px–6px stars
+    const delay = Math.random() * 3;    // random delay for blinking
+
+    return (
+      <div
+        key={i}
+        className="star bg-white rounded-full absolute"
+        style={{
+          top: `${top}%`,
+          left: `${left}%`,
+          width: `${size}px`,
+          height: `${size}px`,
+          backgroundColor: 'rgba(255, 255, 255, 0.15)',
+          animationDelay: `${delay}s`,
+        }}
+      />
+    );
+  })}
+</div>
+
+
+
         <div className="relative z-10 text-white">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight rounded-lg p-2 bg-black bg-opacity-20">
+          <h1 className="text-3xl md:text-5xl font-mono font-bold mb-4 leading-tight rounded-lg p-2 bg-opacity-20">
             Empowering Women in <span className="text-purple-300">Cybersecurity</span>
           </h1>
-          <p className="text-base md:text-xl max-w-2xl mx-auto rounded-lg p-2 bg-black bg-opacity-20">
+          <p className="text-base md:text-xl max-w-2xl mx-auto rounded-lg p-2 bg-opacity-20">
             Fostering a community of strong, skilled, and innovative women leading the future of digital security.
           </p>
         </div>
@@ -82,20 +111,20 @@ const App = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">$500+</p>
+              <p className="text-4xl md:text-5xl font-extrabold mb-2">50+</p>
               <p className="text-lg md:text-xl">Active Members</p>
             </div>
             <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">150+</p>
+              <p className="text-4xl md:text-5xl font-extrabold mb-2">30+</p>
               <p className="text-lg md:text-xl">Events Hosted</p>
             </div>
             <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">$50K+</p>
-              <p className="text-lg md:text-xl">Scholarships Awarded</p>
+              <p className="text-4xl md:text-5xl font-extrabold mb-2">7+</p>
+              <p className="text-lg md:text-xl">Years of Service</p>
             </div>
             <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">95%</p>
-              <p className="text-lg md:text-xl">Career Advancement Rate</p>
+              <p className="text-4xl md:text-5xl font-extrabold mb-2">5+</p>
+              <p className="text-lg md:text-xl">Companies Worked With</p>
             </div>
           </div>
         </div>
