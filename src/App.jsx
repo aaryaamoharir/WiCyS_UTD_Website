@@ -6,32 +6,38 @@ const App = () => {
     {
       date: "July 15, 2025",
       title: "Cybersecurity Career Fair",
-      description: "Connect with leading cybersecurity companies and explore career opportunities. Open to all experience levels."
+      description: "Connect with leading cybersecurity companies and explore career opportunities. Open to all experience levels.",
+      link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Aug 2, 2025", 
       title: "Hands-on Ethical Hacking Workshop",
-      description: "Learn penetration testing fundamentals in this interactive workshop designed for beginners and intermediate practitioners."
+      description: "Learn penetration testing fundamentals in this interactive workshop designed for beginners and intermediate practitioners.",
+      link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Aug 20, 2025",
       title: "Women Leaders Panel Discussion", 
-      description: "Hear from industry veterans about their career journeys, challenges, and advice for aspiring cybersecurity professionals."
+      description: "Hear from industry veterans about their career journeys, challenges, and advice for aspiring cybersecurity professionals.",
+      link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Sep 5, 2025",
       title: "Network Security Deep Dive",
-      description: "Advanced workshop covering network security protocols, threat detection, and incident response strategies."
+      description: "Advanced workshop covering network security protocols, threat detection, and incident response strategies.",
+      link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Sep 18, 2025",
       title: "Resume & Interview Skills Workshop",
-      description: "Professional development session focused on crafting compelling resumes and mastering cybersecurity interviews."
+      description: "Professional development session focused on crafting compelling resumes and mastering cybersecurity interviews.",
+      link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Oct 3, 2025",
       title: "Cloud Security Fundamentals",
-      description: "Comprehensive introduction to cloud security best practices, compliance, and risk management strategies."
+      description: "Comprehensive introduction to cloud security best practices, compliance, and risk management strategies.",
+      link: "https://www.instagram.com/wicys.utd/"
     }
   ];
 
@@ -200,10 +206,15 @@ const App = () => {
                         {event.description}
                       </p>
                     </div>
-                    <button className="mt-6 bg-white/20 backdrop-blur-sm text-[#6C60B4] px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 font-medium"
-                            style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                    <a 
+                      href={event.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="mt-6 bg-white/80 backdrop-blur-sm text-[#6C60B4] px-4 py-2 rounded-full hover:bg-white transition-all duration-300 font-medium"
+                      style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
                       Learn More
-                    </button>
+                    </a>
+
                   </div>
                 </div>
               ))}
