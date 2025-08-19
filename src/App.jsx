@@ -1,16 +1,46 @@
 import React from 'react';
 import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
 
-
 const App = () => {
+  const events = [
+    {
+      date: "July 15, 2025",
+      title: "Cybersecurity Career Fair",
+      description: "Connect with leading cybersecurity companies and explore career opportunities. Open to all experience levels."
+    },
+    {
+      date: "Aug 2, 2025", 
+      title: "Hands-on Ethical Hacking Workshop",
+      description: "Learn penetration testing fundamentals in this interactive workshop designed for beginners and intermediate practitioners."
+    },
+    {
+      date: "Aug 20, 2025",
+      title: "Women Leaders Panel Discussion", 
+      description: "Hear from industry veterans about their career journeys, challenges, and advice for aspiring cybersecurity professionals."
+    },
+    {
+      date: "Sep 5, 2025",
+      title: "Network Security Deep Dive",
+      description: "Advanced workshop covering network security protocols, threat detection, and incident response strategies."
+    },
+    {
+      date: "Sep 18, 2025",
+      title: "Resume & Interview Skills Workshop",
+      description: "Professional development session focused on crafting compelling resumes and mastering cybersecurity interviews."
+    },
+    {
+      date: "Oct 3, 2025",
+      title: "Cloud Security Fundamentals",
+      description: "Comprehensive introduction to cloud security best practices, compliance, and risk management strategies."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white text-gray-900 font-mono">
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat+Alternates:wght@400;600;700&family=Kantumruy+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
 
       <header className="bg-transparent text-white p-4 shadow-lg sticky top-0 z-100 ">
-
-      <nav className="container mx-auto flex justify-between items-center">
+        <nav className="container mx-auto flex justify-between items-center">
         <img src={wicysLogo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
           <ul className="hidden md:flex space-x-6">
             <li><a href="#home" className="text-l hover:text-purple-300 transition duration-300">Home</a></li>
@@ -31,30 +61,28 @@ const App = () => {
       <section id="home" className="relative h-[60vh] md:h-[70vh] bg-gradient-to-t from-purple-300 to-indigo-900 flex items-center justify-center text-center p-4">
         <div className="absolute inset-0 opacity-30"></div>
         <div className="absolute inset-0 z-0 pointer-events-none">
-  {[...Array(100)].map((_, i) => {
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    const size = Math.random() * 6 + 2; // 2px–6px stars
-    const delay = Math.random() * 3;    // random delay for blinking
+          {[...Array(100)].map((_, i) => {
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const size = Math.random() * 6 + 2;
+            const delay = Math.random() * 3;
 
-    return (
-      <div
-        key={i}
-        className="star bg-white rounded-full absolute"
-        style={{
-          top: `${top}%`,
-          left: `${left}%`,
-          width: `${size}px`,
-          height: `${size}px`,
-          backgroundColor: 'rgba(255, 255, 255, 0.15)',
-          animationDelay: `${delay}s`,
-        }}
-      />
-    );
-  })}
-</div>
-
-
+            return (
+              <div
+                key={i}
+                className="star bg-white rounded-full absolute"
+                style={{
+                  top: `${top}%`,
+                  left: `${left}%`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                  animationDelay: `${delay}s`,
+                }}
+              />
+            );
+          })}
+        </div>
 
         <div className="relative z-10 text-white">
           <h1 className="text-3xl md:text-5xl font-mono font-bold mb-4 leading-tight rounded-lg p-2 bg-opacity-20">
@@ -130,6 +158,67 @@ const App = () => {
         </div>
       </section>
 
+
+      <section id="events" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-white uppercase tracking-wider" 
+              style={{
+                fontFamily: 'Montserrat Alternates, sans-serif',
+                background: 'linear-gradient(135deg, #6C60B4, #D5AFFF)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+            Upcoming & Recent Events
+          </h2>
+          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12" 
+             style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+            Join us for workshops, networking events, and professional development opportunities.
+          </p>
+
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-6 pb-6 px-2 scrollbar-hide" 
+                 style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+              {events.map((event, index) => (
+                <div key={index} 
+                     className="flex-none w-80 h-96 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                     style={{
+                       background: 'linear-gradient(135deg, #6C60B4, #D5AFFF)',
+                     }}>
+                  <div className="h-full p-6 flex flex-col justify-between text-white">
+                    <div>
+                      <div className="text-sm font-medium mb-4 opacity-90" 
+                           style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                        {event.date}
+                      </div>
+                      <h3 className="text-xl font-bold mb-4 leading-tight" 
+                          style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>
+                        {event.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed opacity-90" 
+                         style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                        {event.description}
+                      </p>
+                    </div>
+                    <button className="mt-6 bg-white/20 backdrop-blur-sm text-[#6C60B4] px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 font-medium"
+                            style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Scroll indicators */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {events.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-purple-300"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="news" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-800">Latest News</h2>
@@ -177,53 +266,6 @@ const App = () => {
         </div>
       </section>
 
-      <section id="events" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-800">Upcoming Events</h2>
-          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-            Join us for workshops, networking events, and professional development opportunities.
-          </p>
-
-          <div className="relative border-l-4 border-purple-500 pl-8 md:pl-12">
-            <div className="mb-12 flex flex-col md:flex-row items-start md:items-center">
-              <div className="flex-shrink-0 bg-purple-600 text-white px-4 py-2 rounded-full text-center font-semibold mb-4 md:mb-0 md:-ml-16">
-                July 15, 2025
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 flex-grow md:ml-8 transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <h3 className="text-xl font-semibold mb-2 text-indigo-700">Cybersecurity Career Fair</h3>
-                <p className="text-gray-600">
-                  Connect with leading cybersecurity companies and explore career opportunities. Open to all experience levels.
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-12 flex flex-col md:flex-row items-start md:items-center">
-              <div className="flex-shrink-0 bg-purple-600 text-white px-4 py-2 rounded-full text-center font-semibold mb-4 md:mb-0 md:-ml-16">
-                Aug 2, 2025
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 flex-grow md:ml-8 transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <h3 className="text-xl font-semibold mb-2 text-indigo-700">Hands-on Ethical Hacking Workshop</h3>
-                <p className="text-gray-600">
-                  Learn penetration testing fundamentals in this interactive workshop designed for beginners and intermediate practitioners.
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-12 flex flex-col md:flex-row items-start md:items-center">
-              <div className="flex-shrink-0 bg-purple-600 text-white px-4 py-2 rounded-full text-center font-semibold mb-4 md:mb-0 md:-ml-16">
-                Aug 20, 2025
-              </div>
-              <div className="bg-white rounded-xl shadow-lg p-6 flex-grow md:ml-8 transition-transform transform hover:scale-105 hover:shadow-2xl">
-                <h3 className="text-xl font-semibold mb-2 text-indigo-700">Women Leaders Panel Discussion</h3>
-                <p className="text-gray-600">
-                  Hear from industry veterans about their career journeys, challenges, and advice for aspiring cybersecurity professionals.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <footer className="bg-gray-800 text-white py-8 rounded-t-lg">
         <div className="container mx-auto px-4 text-center">
           <p className="mb-4">&copy; {new Date().getFullYear()} WICS. All rights reserved.</p>
@@ -233,6 +275,12 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </div>
   );
 };
