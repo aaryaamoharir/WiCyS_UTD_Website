@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@400;700&family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Custom styles for the mobile menu toggle */
@@ -31,6 +32,9 @@
         }
         .font-montserrat-alt {
             font-family: 'Montserrat Alternates', sans-serif;
+        }
+        .font-alfa-slab {
+            font-family: 'Alfa Slab One', serif;
         }
     </style>
 </head>
@@ -87,6 +91,29 @@
         </div>
     </section>
 
+    <section id="statistics" class="pt-24 pb-16 bg-gradient-to-r from-[#353087] to-[#D5AFFF] text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 rounded-xl">
+                    <p id="stat-1" class="text-4xl md:text-5xl font-alfa-slab mb-2">0+</p>
+                    <p class="text-lg md:text-xl">Active Members</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-2" class="text-4xl md:text-5xl font-alfa-slab mb-2">0+</p>
+                    <p class="text-lg md:text-xl">Events Hosted</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-3" class="text-4xl md:text-5xl font-alfa-slab mb-2">$0K+</p>
+                    <p class="text-lg md:text-xl">Scholarships Awarded</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-4" class="text-4xl md:text-5xl font-alfa-slab mb-2">0%</p>
+                    <p class="text-lg md:text-xl">Career Advancement Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Who We Are Section -->
     <section id="about" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -130,30 +157,6 @@
                     <p class="text-gray-600">
                         A diverse network of cybersecurity professionals, students, and enthusiasts committed to supporting each other's growth. We foster an environment where women can share knowledge, collaborate on projects, and advance their careers.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-16 bg-gradient-to-r from-indigo-700 to-purple-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">500+</p>
-                    <p class="text-lg md:text-xl">Active Members</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">150+</p>
-                    <p class="text-lg md:text-xl">Events Hosted</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">$50K+</p>
-                    <p class="text-lg md:text-xl">Scholarships Awarded</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">95%</p>
-                    <p class="text-lg md:text-xl">Career Advancement Rate</p>
                 </div>
             </div>
         </div>
@@ -291,6 +294,77 @@
                 currentYearSpan.textContent = new Date().getFullYear();
             }
         });
+    </script>
+
+    <!-- GSAP and ScrollTrigger for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // You can write your GSAP animation code here
+        // For example, to animate the heading in the hero section:
+        gsap.from("#home h1", {
+            duration: 1,
+            y: -50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // To animate the paragraph in the hero section:
+        gsap.from("#home p", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.4
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register the ScrollTrigger plugin with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // This function will run when the trigger element enters the viewport
+        function startCounters() {
+            // Animation for the first number
+            animateValue("stat-1", 0, 500, 2, "+");
+            
+            // Animation for the second number
+            animateValue("stat-2", 0, 150, 2, "+");
+
+            // Animation for the third number
+            animateValue("stat-3", 0, 50, 2, "K+");
+
+            // Animation for the fourth number
+            animateValue("stat-4", 0, 95, 2, "%");
+        }
+
+        // Create a ScrollTrigger to run the startCounters function
+        ScrollTrigger.create({
+            trigger: "#statistics",
+            start: "top 80%", // Start animation when the top of the section is 80% from the top of the viewport
+            onEnter: startCounters, // Call the function when the trigger enters the viewport
+            once: true // Ensures the animation runs only once
+        });
+
+        // The helper function to animate the numbers remains the same
+        function animateValue(id, start, end, duration, suffix = "") {
+            let obj = { val: start };
+            let target = document.getElementById(id);
+            
+            gsap.to(obj, {
+                val: end,
+                duration: duration,
+                ease: "power2.out",
+                onUpdate: function() {
+                    if (id === "stat-3") {
+                        target.innerHTML = "$" + Math.round(obj.val) + suffix;
+                    } else {
+                        target.innerHTML = Math.round(obj.val) + suffix;
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
