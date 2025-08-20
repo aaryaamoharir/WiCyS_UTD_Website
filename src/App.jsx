@@ -1,5 +1,30 @@
 import React from 'react';
-import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
+import wicysLogo from './NEWWiCySLogotoplinestackedhoriz.png';
+
+//celina's photo
+//aaryaa's photo
+import belindaPhoto from './assets/officers/Belinda.jpg';
+import lohitaPhoto from './assets/officers/Lohita.jpg';
+import rebecaPhoto from './assets/officers/Rebeca.jpg';
+import sammyPhoto from './assets/officers/Sammy.png';
+import sarahPhoto from './assets/officers/Sarah.jpg';
+import srikrupaaPhoto from './assets/officers/Srikrupaa.jpg';
+import valeriePhoto from './assets/officers/Valerie.jpg';
+import manishaPhoto from './assets/officers/Manisha.png';
+import adhyaPhoto from './assets/officers/Adhya.jpg';
+
+const officerData = {
+  'Celina Rodriguez': { initials: 'CR', title: 'President', photo: null },
+  'Aaryaa Moharir': { initials: 'AM', title: 'Vice President', photo: null },
+  'Valerie Nelson': { initials: 'VN', title: 'Secretary', photo: valeriePhoto },
+  'Sammy Pandey': { initials: 'SP', title: 'Treasurer', photo: sammyPhoto },
+  'Belinda Castillo': { initials: 'BC', title: 'Treasurer', photo: belindaPhoto },
+  'Adhya Walker': { initials: 'AW', title: 'Community', photo: adhyaPhoto },
+  'Srikrupaa Sathiyanarayanan': { initials: 'SS', title: 'Industry', photo: srikrupaaPhoto },
+  'Manisha Mishra': { initials: 'MM', title: 'Industry', photo: manishaPhoto },
+  'Lohita Nagalaksmi': { initials: 'LN', title: 'Design Officer', photo: lohitaPhoto },
+  'Rebeca Carbajal': { initials: 'RC', title: 'Design Officer', photo: rebecaPhoto },
+};
 
 const App = () => {
   const events = [
@@ -40,6 +65,24 @@ const App = () => {
       link: "https://www.instagram.com/wicys.utd/"
     }
   ];
+
+  const OfficerCard = ({ name, data, gradientClass }) => (
+    <div className="bg-white rounded-xl shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+      {data.photo ? (
+        <img 
+          src={data.photo} 
+          alt={name} 
+          className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-purple-200 shadow-lg"
+        />
+      ) : (
+        <div className={`w-32 h-32 ${gradientClass} rounded-full mx-auto mb-4 flex items-center justify-center`}>
+          <span className="text-white text-2xl font-bold">{data.initials}</span>
+        </div>
+      )}
+      <h3 className="text-xl font-semibold mb-2 text-indigo-700">{name}</h3>
+      <p className="text-purple-600 font-medium mb-3">{data.title}</p>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-mono">
@@ -273,6 +316,34 @@ const App = () => {
                 <a href="#" className="text-purple-600 hover:underline font-medium">Read More &rarr;</a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="officers" className="py-16 bg-gradient-to-br from-purple-50 to-indigo-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-800">Meet Our Officers</h2>
+          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
+            Our dedicated leadership team working to advance women in cybersecurity at UTD.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(officerData).map(([name, data], index) => {
+              const gradientClasses = [
+                'bg-gradient-to-br from-purple-400 to-indigo-500',
+                'bg-gradient-to-br from-indigo-400 to-purple-500',
+                'bg-gradient-to-br from-purple-500 to-pink-500',
+              ];
+              
+              return (
+                <OfficerCard 
+                  key={name}
+                  name={name}
+                  data={data}
+                  gradientClass={gradientClasses[index]}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
