@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WICS - Empowering Women in Cybersecurity</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for 'Inter' -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@400;700&family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Custom styles for the mobile menu toggle */
         #mobile-menu {
@@ -25,51 +26,92 @@
             background-color: #f9fafb; /* Equivalent to bg-gray-50 */
             color: #1f2937; /* Equivalent to text-gray-900 */
         }
+        /* Custom font classes */
+        .font-kantumruy {
+            font-family: 'Kantumruy Pro', sans-serif;
+        }
+        .font-montserrat-alt {
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
+        .font-alfa-slab {
+            font-family: 'Alfa Slab One', serif;
+        }
     </style>
 </head>
+<!-- Head Section -->
 <body class="min-h-screen">
-
-    <!-- Navigation Bar -->
-    <header class="bg-gradient-to-r from-purple-700 to-indigo-800 text-white p-4 shadow-lg sticky top-0 z-50 rounded-b-lg">
+    <header class="bg-white p-4 shadow-lg sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold rounded-md px-3 py-1 bg-white text-purple-700">WICS</div>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="#home" class="hover:text-purple-200 transition duration-300">Home</a></li>
-                <li><a href="#about" class="hover:text-purple-200 transition duration-300">About</a></li>
-                <li><a href="#news" class="hover:text-purple-200 transition duration-300">News</a></li>
-                <li><a href="#events" class="hover:text-purple-200 transition duration-300">Events</a></li>
-                <li><a href="#officers" class="hover:text-purple-200 transition duration-300">Officers</a></li>
-                <li><a href="#contact" class="hover:text-purple-200 transition duration-300">Contact</a></li>
-            </ul>
-            <!-- Mobile Menu Button (Hamburger) -->
+            <a href="#home">
+                <img src="src/NEWWiCySLogotoplinestackedhoriz.png" alt="WiCyS Logo" class="h-20 w-auto">
+            </a>
+            <ul class="hidden md:flex space-x-6 font-montserrat-alt font-semibold text-[#6C60B4]">
+                <li><a href="#home" class="hover:text-[#353087] transition duration-300">Home</a></li>
+                <li><a href="#about" class="hover:text-[#353087] transition duration-300">About</a></li>
+                <li><a href="#news" class="hover:text-[#353087] transition duration-300">News</a></li>
+                <li><a href="#events" class="hover:text-[#353087] transition duration-300">Events</a></li>
+                <li><a href="#officers" class="hover:text-[#353087] transition duration-300">Officers</a></li>
+                <li><a href="#contact" class="hover:text-[#353087] transition duration-300">Contact</a></li>
+            </ul>            
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <button id="mobile-menu-button" class="text-indigo-700 focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
-        <!-- Mobile Menu (Hidden by default, toggled by JS) -->
-        <div id="mobile-menu" class="hidden md:hidden flex-col items-center mt-4 space-y-4">
-            <a href="#home" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">Home</a>
-            <a href="#about" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">About</a>
-            <a href="#news" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">News</a>
-            <a href="#events" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">Events</a>
-            <a href="#officers" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">Officers</a>
-            <a href="#contact" class="block w-full text-center py-2 hover:bg-purple-600 rounded-md">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden flex-col items-center mt-4 space-y-4 font-montserrat-alt text-indigo-700 font-semibold">
+            <a href="#home" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">Home</a>
+            <a href="#about" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">About</a>
+            <a href="#news" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">News</a>
+            <a href="#events" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">Events</a>
+            <a href="#officers" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">Officers</a>
+            <a href="#contact" class="block w-full text-center py-2 hover:bg-purple-50 rounded-md">Contact</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative h-[60vh] md:h-[70vh] bg-gradient-to-br from-purple-600 to-indigo-900 flex items-center justify-center text-center p-4">
-        <!-- Background Overlay for text readability -->
-        <div class="absolute inset-0 bg-black opacity-30"></div>
-        <div class="relative z-10 text-white">
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight rounded-lg p-2 bg-black bg-opacity-20">
-                Empowering Women in <span class="text-purple-300">Cybersecurity</span>
-            </h1>
-            <p class="text-base md:text-xl max-w-2xl mx-auto rounded-lg p-2 bg-black bg-opacity-20">
-                Fostering a community of strong, skilled, and innovative women leading the future of digital security.
-            </p>
+<!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-[#353087] to-[#D5AFFF] text-white">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-20 md:py-24">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                  <span class="mt-2 inline-block font-kantumruy text-[#FCFCFC]">Empowering Women in</span><br>
+                  <span class="mt-2 inline-block font-montserrat-alt text-[#DABCFF]">Cybersecurity</span>
+                </h1>
+                <p class="text-lg lg:text-xl max-w-xl mx-auto md:mx-0 font-kantumruy text-[#FCFCFC]">
+                  Fostering a community of strong, skilled, and innovative women leading the future of digital security.
+                </p>
+                    <a href="#events" 
+                        class="mt-10 inline-block bg-[#9BC41F] text-white font-montserrat-alt font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-[#86AB1B] transition duration-300">
+                        View Our Events
+                    </a>
+              </div>              
+            <div class="flex justify-center md:justify-end">
+                <img src="src/privacy-image.jpg" alt="Privacy Image" class="w-full max-w-sm lg:max-w-md rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="pt-24 pb-16 bg-gradient-to-r from-[#353087] to-[#D5AFFF] text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 rounded-xl">
+                    <p id="stat-1" class="text-4xl md:text-5xl font-alfa-slab mb-2">0+</p>
+                    <p class="text-lg md:text-xl">Active Members</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-2" class="text-4xl md:text-5xl font-alfa-slab mb-2">0+</p>
+                    <p class="text-lg md:text-xl">Events Hosted</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-3" class="text-4xl md:text-5xl font-alfa-slab mb-2">$0K+</p>
+                    <p class="text-lg md:text-xl">Scholarships Awarded</p>
+                </div>
+                <div class="p-4 rounded-xl">
+                    <p id="stat-4" class="text-4xl md:text-5xl font-alfa-slab mb-2">0%</p>
+                    <p class="text-lg md:text-xl">Career Advancement Rate</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -116,30 +158,6 @@
                     <p class="text-gray-600">
                         A diverse network of cybersecurity professionals, students, and enthusiasts committed to supporting each other's growth. We foster an environment where women can share knowledge, collaborate on projects, and advance their careers.
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-16 bg-gradient-to-r from-indigo-700 to-purple-800 text-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">500+</p>
-                    <p class="text-lg md:text-xl">Active Members</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">150+</p>
-                    <p class="text-lg md:text-xl">Events Hosted</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">$50K+</p>
-                    <p class="text-lg md:text-xl">Scholarships Awarded</p>
-                </div>
-                <div class="p-4 rounded-xl">
-                    <p class="text-4xl md:text-5xl font-extrabold mb-2">95%</p>
-                    <p class="text-lg md:text-xl">Career Advancement Rate</p>
                 </div>
             </div>
         </div>
@@ -277,6 +295,77 @@
                 currentYearSpan.textContent = new Date().getFullYear();
             }
         });
+    </script>
+
+    <!-- GSAP and ScrollTrigger for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+        // You can write your GSAP animation code here
+        // For example, to animate the heading in the hero section:
+        gsap.from("#home h1", {
+            duration: 1,
+            y: -50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // To animate the paragraph in the hero section:
+        gsap.from("#home p", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.4
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Register the ScrollTrigger plugin with GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // This function will run when the trigger element enters the viewport
+        function startCounters() {
+            // Animation for the first number
+            animateValue("stat-1", 0, 500, 2, "+");
+            
+            // Animation for the second number
+            animateValue("stat-2", 0, 150, 2, "+");
+
+            // Animation for the third number
+            animateValue("stat-3", 0, 50, 2, "K+");
+
+            // Animation for the fourth number
+            animateValue("stat-4", 0, 95, 2, "%");
+        }
+
+        // Create a ScrollTrigger to run the startCounters function
+        ScrollTrigger.create({
+            trigger: "#statistics",
+            start: "top 80%", // Start animation when the top of the section is 80% from the top of the viewport
+            onEnter: startCounters, // Call the function when the trigger enters the viewport
+            once: true // Ensures the animation runs only once
+        });
+
+        // The helper function to animate the numbers remains the same
+        function animateValue(id, start, end, duration, suffix = "") {
+            let obj = { val: start };
+            let target = document.getElementById(id);
+            
+            gsap.to(obj, {
+                val: end,
+                duration: duration,
+                ease: "power2.out",
+                onUpdate: function() {
+                    if (id === "stat-3") {
+                        target.innerHTML = "$" + Math.round(obj.val) + suffix;
+                    } else {
+                        target.innerHTML = Math.round(obj.val) + suffix;
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
