@@ -1,5 +1,5 @@
-import React from 'react';
-import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
+import React, { useEffect } from 'react';
+import wicysLogo from '/Users/lohita.n/Desktop/College /WiCyS_UTD_Website/src/NEWWiCySLogotoplinestackedhoriz.png';
 
 const App = () => {
   const events = [
@@ -10,14 +10,14 @@ const App = () => {
       link: "https://www.instagram.com/wicys.utd/"
     },
     {
-      date: "Aug 2, 2025", 
+      date: "Aug 2, 2025",
       title: "Hands-on Ethical Hacking Workshop",
       description: "Learn penetration testing fundamentals in this interactive workshop designed for beginners and intermediate practitioners.",
       link: "https://www.instagram.com/wicys.utd/"
     },
     {
       date: "Aug 20, 2025",
-      title: "Women Leaders Panel Discussion", 
+      title: "Women Leaders Panel Discussion",
       description: "Hear from industry veterans about their career journeys, challenges, and advice for aspiring cybersecurity professionals.",
       link: "https://www.instagram.com/wicys.utd/"
     },
@@ -41,64 +41,165 @@ const App = () => {
     }
   ];
 
+  useEffect(() => {
+    // Dynamically load GSAP and ScrollTrigger scripts
+    const gsapScript = document.createElement('script');
+    gsapScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+    gsapScript.async = true;
+    document.body.appendChild(gsapScript);
+
+    const scrollTriggerScript = document.createElement('script');
+    scrollTriggerScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+    scrollTriggerScript.async = true;
+    document.body.appendChild(scrollTriggerScript);
+
+    // Run animation code after scripts are loaded
+    scrollTriggerScript.onload = () => {
+      const gsap = window.gsap;
+      gsap.registerPlugin(window.ScrollTrigger);
+
+      // Hero section animations
+      gsap.from("#home h1", {
+        duration: 1,
+        y: -50,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.2
+      });
+
+      gsap.from("#home p", {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.4
+      });
+
+      // UPDATED Helper function to animate numbers
+      function animateValue(id, start, end, duration, suffix = "") {
+        let obj = { val: start };
+        let target = document.getElementById(id);
+        
+        gsap.to(obj, {
+          val: end,
+          duration: duration,
+          ease: "power2.out",
+          onUpdate: function() {
+            // The special 'if' condition for stat-3 has been removed
+            target.innerHTML = Math.round(obj.val) + suffix;
+          }
+        });
+      }
+
+      // UPDATED ScrollTrigger for the statistics section
+      function startCounters() {
+        animateValue("stat-1", 0, 50, 2, "+"); // Active Members
+        animateValue("stat-2", 0, 30, 2, "+"); // Events Hosted
+        animateValue("stat-3", 0, 7, 2, "+");  // Years of Service
+        animateValue("stat-4", 0, 5, 2, "+");  // Companies Worked With
+      }
+
+      window.ScrollTrigger.create({
+        trigger: "#statistics",
+        start: "top 80%",
+        onEnter: startCounters,
+        once: true
+      });
+    };
+
+    // Cleanup function to remove scripts on component unmount
+    return () => {
+      document.body.removeChild(gsapScript);
+      document.body.removeChild(scrollTriggerScript);
+    };
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-white text-gray-900 font-mono">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat+Alternates:wght@400;600;700&family=Kantumruy+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+      {/* Consolidated Google Fonts link */}
+      <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@300;400;500;600;700&family=Kantumruy+Pro:wght@400;700&family=Montserrat+Alternates:wght@400;700;800;900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;800;900&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;700&display=swap" rel="stylesheet" />
 
-      <header className="bg-transparent text-white p-4 shadow-lg sticky top-0 z-100 ">
+      <header className="bg-white p-4 shadow-lg sticky top-0 z-100 ">
         <nav className="container mx-auto flex justify-between items-center">
-        <img src={wicysLogo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
-          <ul className="hidden md:flex space-x-6">
-            <li><a href="#home" className="text-l hover:text-purple-300 transition duration-300">Home</a></li>
-            <li><a href="#about" className="text-l hover:text-purple-200 transition duration-300">About</a></li>
-            <li><a href="#news" className="text-l hover:text-purple-200 transition duration-300">News</a></li>
-            <li><a href="#events" className="text-l hover:text-purple-200 transition duration-300">Events</a></li>
-            <li><a href="#officers" className="text-l hover:text-purple-200 transition duration-300">Officers</a></li>
-            <li><a href="#contact" className="text-l hover:text-purple-200 transition duration-300">Contact</a></li>
+          <img src={wicysLogo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+          <ul
+            className="hidden md:flex space-x-6"
+            style={{
+              fontFamily: 'Montserrat Alternates, sans-serif',
+              color: '#6C60B4',
+              fontWeight: 900,
+            }}>
+            <li><a href="#home" className="hover:text-[#353087] transition duration-300">Home</a></li>
+            <li><a href="#about" className="hover:text-[#353087] transition duration-300">About</a></li>
+            <li><a href="#news" className="hover:text-[#353087] transition duration-300">News</a></li>
+            <li><a href="#events" className="hover:text-[#353087] transition duration-300">Events</a></li>
+            <li><a href="#officers" className="hover:text-[#353087] transition duration-300">Officers</a></li>
+            <li><a href="#contact" className="hover:text-[#353087] transition duration-300">Contact</a></li>
           </ul>
           <div className="md:hidden">
-            <button className="text-white focus:outline-none">
+            <button className="text-gray-900 focus:outline-none">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
           </div>
         </nav>
       </header>
-
-      <section id="home" className="relative h-[60vh] md:h-[70vh] bg-gradient-to-t from-purple-300 to-indigo-900 flex items-center justify-center text-center p-4">
-        <div className="absolute inset-0 opacity-30"></div>
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          {[...Array(100)].map((_, i) => {
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const size = Math.random() * 6 + 2;
-            const delay = Math.random() * 3;
-
-            return (
-              <div
-                key={i}
-                className="star bg-white rounded-full absolute"
-                style={{
-                  top: `${top}%`,
-                  left: `${left}%`,
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                  animationDelay: `${delay}s`,
-                }}
-              />
-            );
-          })}
+      
+      <section id="home" className="bg-gradient-to-br from-[#353087] to-[#D5AFFF] text-white">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 px-6 py-20 md:py-24">
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-4">
+              <span className="mt-2 inline-block"
+                    style={{
+                      fontFamily: 'Kantumruy Pro, sans-serif',
+                        background: '#FFFFFF',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text'
+                    }}>
+                Empowering Women in
+              </span>
+              <br />
+              <span className="mt-2 inline-block"
+                    style={{
+                      fontFamily: 'Montserrat Alternates, sans-serif',
+                        background: '#D5AFFF',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text'
+                    }}>
+                Cybersecurity
+              </span>
+            </h1>
+                <p className="text-lg lg:text-xl max-w-xl mx-auto md:mx-0" 
+                  style={{
+                      fontFamily: 'Kantumruy Pro, sans-serif',
+                      background: '#FFFFFF',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text'
+                  }}>
+                  Fostering a community of strong, skilled, and innovative women leading the future of digital security.
+                </p>
+                <a href="#events" 
+                  className="mt-10 inline-block bg-gradient-to-r from-[#9BC41F] to-[#b2e825] font-semibold px-6 py-3 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+                  style={{
+                      color: 'white',
+                      fontFamily: 'Kantumruy Pro',
+                      fontWeight: 'bold'
+                  }}>
+                    View Our Events
+                </a>
+              </div>              
+            <div className="flex justify-center md:justify-end">
+                <img src="src/privacy-image.jpg" alt="Privacy Image" className="w-full max-w-sm lg:max-w-md rounded-lg"/>
+            </div>
         </div>
-
-        <div className="relative z-10 text-white">
-          <h1 className="text-3xl md:text-5xl font-mono font-bold mb-4 leading-tight rounded-lg p-2 bg-opacity-20">
-            Empowering Women in <span className="text-purple-300">Cybersecurity</span>
-          </h1>
-          <p className="text-base md:text-xl max-w-2xl mx-auto rounded-lg p-2 bg-opacity-20">
-            Fostering a community of strong, skilled, and innovative women leading the future of digital security.
-          </p>
-        </div>
-      </section>
+    </section>
 
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -114,7 +215,7 @@ const App = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-indigo-700">Our Mission</h3>
               <p className="text-gray-600">
-                To advance women in cybersecurity through professional development, mentorship, and community building. We bridge the gender gap by providing resources, networking opportunities, and advocacy for women at all career stages.
+                To advance women in cybersecurity through professional development, mentorship, and community building. We bridge the gender gap by providing resources, networking opportunities, and advocacy for a woman at all career stages.
               </p>
             </div>
 
@@ -141,29 +242,28 @@ const App = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-indigo-700 to-purple-800 text-white">
+      <section id="statistics" className="pt-24 pb-16 bg-[#9BC41F] text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">50+</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div className="p-4">
+              <p id="stat-1" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
               <p className="text-lg md:text-xl">Active Members</p>
             </div>
-            <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">30+</p>
+            <div className="p-4">
+              <p id="stat-2" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
               <p className="text-lg md:text-xl">Events Hosted</p>
             </div>
-            <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">7+</p>
+            <div className="p-4">
+              <p id="stat-3" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
               <p className="text-lg md:text-xl">Years of Service</p>
             </div>
-            <div className="p-4 rounded-xl">
-              <p className="text-4xl md:text-5xl font-extrabold mb-2">5+</p>
+            <div className="p-4">
+              <p id="stat-4" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
               <p className="text-lg md:text-xl">Companies Worked With</p>
             </div>
           </div>
         </div>
       </section>
-
 
       <section id="events" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
