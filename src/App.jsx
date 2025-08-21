@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import wicysLogo from '/Users/lohita.n/Desktop/College /WiCyS_UTD_Website/src/NEWWiCySLogotoplinestackedhoriz.png';
+import React from 'react';
+import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
 
 const App = () => {
   const events = [
