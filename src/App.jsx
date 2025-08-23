@@ -1,8 +1,8 @@
 import React from 'react';
 import wicysLogo from './NEWWiCySLogotoplinestackedhoriz.png';
 
-//celina's photo
-//aaryaa's photo
+import celinaPhoto from './assets/officers/Celina.jpg';
+import aaryaaPhoto from './assets/officers/Aaryaa.jpg';
 import belindaPhoto from './assets/officers/Belinda.jpg';
 import lohitaPhoto from './assets/officers/Lohita.jpg';
 import rebecaPhoto from './assets/officers/Rebeca.jpg';
@@ -14,14 +14,15 @@ import manishaPhoto from './assets/officers/Manisha.png';
 import adhyaPhoto from './assets/officers/Adhya.jpg';
 
 const officerData = {
-  'Celina Rodriguez': { initials: 'CR', title: 'President', photo: null },
-  'Aaryaa Moharir': { initials: 'AM', title: 'Vice President', photo: null },
+  'Celina Rodriguez': { initials: 'CR', title: 'President', photo: celinaPhoto },
+  'Aaryaa Moharir': { initials: 'AM', title: 'Vice President', photo: aaryaaPhoto },
   'Valerie Nelson': { initials: 'VN', title: 'Secretary', photo: valeriePhoto },
   'Sammy Pandey': { initials: 'SP', title: 'Treasurer', photo: sammyPhoto },
   'Belinda Castillo': { initials: 'BC', title: 'Treasurer', photo: belindaPhoto },
   'Adhya Walker': { initials: 'AW', title: 'Community', photo: adhyaPhoto },
   'Srikrupaa Sathiyanarayanan': { initials: 'SS', title: 'Industry', photo: srikrupaaPhoto },
   'Manisha Mishra': { initials: 'MM', title: 'Industry', photo: manishaPhoto },
+  'Sarah Tabada': { initials: 'ST', title: 'Social Media Officer', photo: sarahPhoto },
   'Lohita Nagalaksmi': { initials: 'LN', title: 'Design Officer', photo: lohitaPhoto },
   'Rebeca Carbajal': { initials: 'RC', title: 'Design Officer', photo: rebecaPhoto },
 };
