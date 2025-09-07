@@ -1,6 +1,8 @@
 import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
 import React, { useEffect } from 'react';
-
+import communiry from './assets/community.png';
+import goals from './assets/goal.png';
+import notebook from './assets/notebook.png';
 const App = () => {
   const events = [
     {
@@ -138,8 +140,7 @@ const App = () => {
             <li><a href="#news" className="hover:text-[#353087] transition duration-300">News</a></li>
             <li><a href="#events" className="hover:text-[#353087] transition duration-300">Events</a></li>
             <li><a href="#officers" className="hover:text-[#353087] transition duration-300">Officers</a></li>
-            <li><a href="#contact" className="hover:text-[#353087] transition duration-300">Contact</a></li>
-          </ul>
+           </ul>
           <div className="md:hidden">
             <button className="text-gray-900 focus:outline-none">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -251,8 +252,8 @@ const App = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <div className="bg-purple-100 p-4 rounded-full mb-4">
-                <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <div className="bg-purple-200 p-4 rounded-full mb-4">
+              <img src={goals} alt="Mission" className="w-12 h-12 object-contain" />
               </div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
@@ -271,9 +272,8 @@ const App = () => {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <div className="bg-yellow-100 p-4 rounded-full mb-4">
-                <svg className="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-              </div>
+              <div className="bg-purple-100 p-4 rounded-full mb-4">
+              <img src={notebook} alt="What We Do" className="w-12 h-12 object-contain" /> </div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
   style={{
@@ -290,9 +290,8 @@ const App = () => {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <div className="bg-blue-100 p-4 rounded-full mb-4">
-                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a3 3 0 013-3h12a3 3 0 013 3v2zm-11.234-6.68a2 2 0 110-2.828 2 2 0 010 2.828zM15 11a3 3 0 10-3-3m0 0a3 3 0 00-3 3v4a3 3 0 003 3"></path></svg>
-              </div>
+              <div className="bg-purple-200 p-4 rounded-full mb-4">
+              <img src={communiry} alt="What We Do" className="w-12 h-12 object-contain" /></div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
   style={{
@@ -518,19 +517,14 @@ const App = () => {
         </div>
       </div>
     </section>
-    <div className="flex flex-col gap-4">
-
+    <div className="relative w-full">
   {/* Wave at the bottom */}
   <svg
-    className="w-full"
-    viewBox="0 0 1440 200"
+    className="w-full h-[500px]"  // custom height
+    viewBox="0 0 1440 320"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="none"
   >
-    <path
-      d="M0,100 C360,300 1080,0 1440,150 L1440,500 L0,500 Z"  // increased vertical curve
-      fill="url(#gradientWave)"
-    />
     <defs>
       <linearGradient id="gradientWave" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stopColor="#77A2B7" />
@@ -538,8 +532,20 @@ const App = () => {
         <stop offset="100%" stopColor="#B6D1EA" />
       </linearGradient>
     </defs>
+    <path
+      fill="url(#gradientWave)"
+      d="M0,160 C360,300 1080,0 1440,160 L1440,320 L0,320 Z"
+    />
   </svg>
+
+  {/* Text inside the wave */}
+  <div className="absolute inset-0 flex items-end justify-center pb-8">
+  <h2 className="text-white text-3xl md:text-5xl font-bold text-center">
+    Together – We Connect – Support – Thrive
+  </h2>
+  </div>
 </div>
+
 
 
 
