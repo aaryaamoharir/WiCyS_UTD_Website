@@ -85,7 +85,6 @@ const App = () => {
           duration: duration,
           ease: "power2.out",
           onUpdate: function() {
-            // The special 'if' condition for stat-3 has been removed
             target.innerHTML = Math.round(obj.val) + suffix;
           }
         });
@@ -201,11 +200,53 @@ const App = () => {
         </div>
     </section>
 
+    <section
+  id="statistics"
+  className="pt-24 pb-16 text-white"
+  style={{
+    background: 'radial-gradient(circle at center, #DDBEFF 0%, #DAB9FF 30%, #6C60B4 100%)',
+  }}
+>
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="p-4">
+        <p id="stat-1" className="text-4xl md:text-5xl mb-2 font-bold" style={{ fontFamily: 'Montserrat Alternates, sans-serif' }}>50+</p>
+        <p className="text-lg md:text-xl" style={{ fontFamily: 'Kantumruy Pro, sans-serif' }}>Active Members</p>
+      </div>
+      <div className="p-4">
+        <p id="stat-2" className="text-4xl md:text-5xl mb-2 font-bold" style={{ fontFamily: 'Montserrat Alternates, sans-serif' }}>30+</p>
+        <p className="text-lg md:text-xl" style={{ fontFamily: 'Kantumruy Pro, sans-serif' }}>Events Hosted</p>
+      </div>
+      <div className="p-4">
+        <p id="stat-3" className="text-4xl md:text-5xl mb-2 font-bold" style={{ fontFamily: 'Montserrat Alternates, sans-serif' }}>7+</p>
+        <p className="text-lg md:text-xl" style={{ fontFamily: 'Kantumruy Pro, sans-serif' }}>Years of Service</p>
+      </div>
+      <div className="p-4">
+        <p id="stat-4" className="text-4xl md:text-5xl mb-2 font-bold" style={{ fontFamily: 'Montserrat Alternates, sans-serif' }}>5+</p>
+        <p className="text-lg md:text-xl" style={{ fontFamily: 'Kantumruy Pro, sans-serif' }}>Companies Worked With</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-800">Who We Are</h2>
-          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-            Dedicated to creating an inclusive and empowering environment for women in cybersecurity.
+        <h2
+  className="text-3xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#9BC41F', // solid blue text
+  }}
+>
+  Who We Are
+</h2>
+
+<p className="text-center text-lg md:text-xl max-w-3xl mx-auto mb-12"
+   style={{
+     fontFamily: 'Kantumruy Pro, sans-serif',
+     color: '#1E1E1E',
+   }}>  Dedicated to creating an inclusive and empowering environment for women in cybersecurity.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -213,8 +254,18 @@ const App = () => {
               <div className="bg-purple-100 p-4 rounded-full mb-4">
                 <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-indigo-700">Our Mission</h3>
-              <p className="text-gray-600">
+              <h2
+  className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#9BC41F', // solid blue text
+  }}
+>Our Mission</h2>
+              <p className="text-center text-lg md:text-xl max-w-3xl mx-auto mb-12"
+   style={{
+     fontFamily: 'Kantumruy Pro, sans-serif',
+     color: '#878787',
+   }}>
                 To advance women in cybersecurity through professional development, mentorship, and community building. We bridge the gender gap by providing resources, networking opportunities, and advocacy for a woman at all career stages.
               </p>
             </div>
@@ -223,8 +274,17 @@ const App = () => {
               <div className="bg-yellow-100 p-4 rounded-full mb-4">
                 <svg className="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-indigo-700">What We Do</h3>
-              <p className="text-gray-600">
+              <h2
+  className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#9BC41F', // solid blue text
+  }}>What We Do</h2>
+              <p className="text-center text-lg md:text-xl max-w-3xl mx-auto mb-12"
+   style={{
+     fontFamily: 'Kantumruy Pro, sans-serif',
+     color: '#878787',
+   }}>
                 We organize workshops, networking events, and mentorship programs. Our initiatives include scholarship opportunities, career development resources, technical training sessions, and advocacy for inclusive workplace practices.
               </p>
             </div>
@@ -233,33 +293,19 @@ const App = () => {
               <div className="bg-blue-100 p-4 rounded-full mb-4">
                 <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a3 3 0 013-3h12a3 3 0 013 3v2zm-11.234-6.68a2 2 0 110-2.828 2 2 0 010 2.828zM15 11a3 3 0 10-3-3m0 0a3 3 0 00-3 3v4a3 3 0 003 3"></path></svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-indigo-700">Our Community</h3>
-              <p className="text-gray-600">
+              <h2
+  className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#9BC41F', // solid blue text
+  }}>Our Community</h2>
+              <p className="text-center text-lg md:text-xl max-w-3xl mx-auto mb-12"
+   style={{
+     fontFamily: 'Kantumruy Pro, sans-serif',
+     color: '#878787',
+   }}>
                 A diverse network of cybersecurity professionals, students, and enthusiasts committed to supporting each other's growth. We foster an environment where women can share knowledge, collaborate on projects, and advance their careers.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="statistics" className="pt-24 pb-16 bg-[#9BC41F] text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div className="p-4">
-              <p id="stat-1" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
-              <p className="text-lg md:text-xl">Active Members</p>
-            </div>
-            <div className="p-4">
-              <p id="stat-2" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
-              <p className="text-lg md:text-xl">Events Hosted</p>
-            </div>
-            <div className="p-4">
-              <p id="stat-3" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
-              <p className="text-lg md:text-xl">Years of Service</p>
-            </div>
-            <div className="p-4">
-              <p id="stat-4" className="text-4xl md:text-5xl mb-2" style={{ fontFamily: 'Alfa Slab One, serif' }}>0+</p>
-              <p className="text-lg md:text-xl">Companies Worked With</p>
             </div>
           </div>
         </div>
@@ -332,60 +378,183 @@ const App = () => {
 
       <section id="news" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-indigo-800">Latest News</h2>
-          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12">
-            Stay updated with the latest developments in cybersecurity and our community initiatives.
+        <h2
+  className="text-4xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#68A1C1', // solid blue text
+  }}
+>
+  Recent News and Job App
+</h2>
+
+
+          <p className="text-center text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-12" 
+             style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+            Join us for workshops, networking events, and professional development opportunities.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <img src="https://placehold.co/400x250/9333ea/ffffff?text=News+Image+1" alt="News 1" className="w-full h-48 object-cover rounded-t-xl" />
-              <div className="p-6">
-                <p className="text-sm text-gray-500 mb-2">June 15, 2025</p>
-                <h3 className="text-xl font-semibold mb-3 text-indigo-700">WICS Hosts Annual Cybersecurity Summit</h3>
-                <p className="text-gray-600 mb-4">
-                  Our annual summit brought together industry leaders, experts, and enthusiasts for insightful discussions and workshops.
-                </p>
-                <a href="#" className="text-purple-600 hover:underline font-medium">Read More &rarr;</a>
-              </div>
+          <div className="relative">
+            <div className="flex overflow-x-auto space-x-6 pb-6 px-2 scrollbar-hide" 
+                 style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+              {events.map((event, index) => (
+                <div key={index} 
+                     className="flex-none w-80 h-96 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                     style={{
+                       background: 'linear-gradient(135deg, #CBE5FD, #68A1C1)',
+                     }}>
+                  <div className="h-full p-6 flex flex-col justify-between text-white">
+                    <div>
+                      <div className="text-sm font-medium mb-4 opacity-90" 
+                           style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                        {event.date}
+                      </div>
+                      <h3 className="text-xl font-bold mb-4 leading-tight" 
+                          style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>
+                        {event.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed opacity-90" 
+                         style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>
+                        {event.description}
+                      </p>
+                    </div>
+                   
+
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <img src="https://placehold.co/400x250/a855f7/ffffff?text=News+Image+2" alt="News 2" className="w-full h-48 object-cover rounded-t-xl" />
-              <div className="p-6">
-                <p className="text-sm text-gray-500 mb-2">June 10, 2025</p>
-                <h3 className="text-xl font-semibold mb-3 text-indigo-700">New Mentorship Program Launched</h3>
-                <p className="text-gray-600 mb-4">
-                  We're excited to announce our new mentorship program connecting aspiring professionals with experienced mentors.
-                </p>
-                <a href="#" className="text-purple-600 hover:underline font-medium">Read More &rarr;</a>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl">
-              <img src="https://placehold.co/400x250/c084fc/ffffff?text=News+Image+3" alt="News 3" className="w-full h-48 object-cover rounded-t-xl" />
-              <div className="p-6">
-                <p className="text-sm text-gray-500 mb-2">June 5, 2025</p>
-                <h3 className="text-xl font-semibold mb-3 text-indigo-700">Scholarship Recipients Announced</h3>
-                <p className="text-gray-600 mb-4">
-                  Congratulations to the deserving recipients of this year's WICS scholarships!
-                </p>
-                <a href="#" className="text-purple-600 hover:underline font-medium">Read More &rarr;</a>
-              </div>
+            
+            {/* Scroll indicators */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {events.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-blue-300"></div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-gray-800 text-white py-8 rounded-t-lg">
-        <div className="container mx-auto px-4 text-center">
-          <p className="mb-4">&copy; {new Date().getFullYear()} WICS. All rights reserved.</p>
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="hover:text-purple-400 transition duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-purple-400 transition duration-300">Terms of Service</a>
+      <div className="flex flex-col gap-4">
+  <div className="h-3 w-full" style={{ backgroundColor: "#6C60B4" }}></div>
+  <div className="h-3 w-full" style={{ backgroundColor: "#9BC41F" }}></div>
+  <div className="h-3 w-full" style={{ backgroundColor: "#68A1C1" }}></div>
+</div>
+
+
+      <section id="officers" className="py-16 bg-gray-100 relative">
+      <div className="container mx-auto px-4">
+      <h2
+  className="text-4xl md:text-5xl font-bold text-center mb-4 uppercase tracking-wider"
+  style={{
+    fontFamily: 'Montserrat Alternates, sans-serif',
+    color: '#6C60B4', // solid blue text
+  }}
+>
+          OFFICERS
+        </h2>
+
+        {/* Officers Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          {/* Row 1 */}
+          {[1, 2, 3].map((index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+              <div className="w-20 h-20 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2" style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>Name</h3>
+              <p className="text-gray-500 mb-4" style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>Officer Role</p>
+           
+            </div>
+          ))}
+
+          {/* Row 2 */}
+          {[4, 5, 6].map((index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+              <div className="w-20 h-20 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2" style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>Name</h3>
+              <p className="text-gray-500 mb-4" style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>Officer Role</p>
+              
+            </div>
+          ))}
+
+          {/* Row 3 */}
+          {[7, 8, 9].map((index) => (
+            <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+              <div className="w-20 h-20 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
+                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-2" style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>Name</h3>
+              <p className="text-gray-500 mb-4" style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>Officer Role</p>
+              <div className="flex justify-center space-x-3">
+              </div>
+            </div>
+          ))}
+
+          {/* Row 4 - Only 2 cards centered */}
+          <div className="col-span-full flex justify-center gap-8">
+            {[10, 11].map((index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center transition-transform transform hover:scale-105 hover:shadow-2xl w-80">
+                <div className="w-20 h-20 bg-black rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2" style={{fontFamily: 'Montserrat Alternates, sans-serif'}}>Name</h3>
+                <p className="text-gray-500 mb-4" style={{fontFamily: 'Kantumruy Pro, sans-serif'}}>Officer Role</p>
+               
+              </div>
+            ))}
           </div>
         </div>
-      </footer>
+      </div>
+    </section>
+    <div className="flex flex-col gap-4">
+
+  {/* Wave at the bottom */}
+  <svg
+    className="w-full"
+    viewBox="0 0 1440 200"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0,100 C360,300 1080,0 1440,150 L1440,500 L0,500 Z"  // increased vertical curve
+      fill="url(#gradientWave)"
+    />
+    <defs>
+      <linearGradient id="gradientWave" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#77A2B7" />
+        <stop offset="50%" stopColor="#77A2B7" />
+        <stop offset="100%" stopColor="#B6D1EA" />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+
+
+
+<footer
+  className="text-white py-8 rounded-t-lg"
+  style={{
+    background: "linear-gradient(90deg, #77A2B7, #77A2B7, #B6D1EA)"
+  }}
+>
+  <div className="container mx-auto px-4 text-center">
+    <p className="mb-4">&copy; {new Date().getFullYear()} UTD WICYS. All rights reserved.</p>
+  </div>
+</footer>
+
 
       <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
