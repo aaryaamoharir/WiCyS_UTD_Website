@@ -1,4 +1,3 @@
-import wicysLogo from '/Users/aaryaamoharir/repos/wicys_website/src/NEWWiCySLogotoplinestackedhoriz.png';
 import React, { useEffect } from 'react';
 import communiry from './assets/community.png';
 import goals from './assets/goal.png';
