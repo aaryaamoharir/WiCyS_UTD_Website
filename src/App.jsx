@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import communiry from './assets/community.png';
-import goals from './assets/goal.png';
-import notebook from './assets/notebook.png';
+
 const App = () => {
   const events = [
     {
@@ -148,7 +146,7 @@ const App = () => {
 
       <header className="bg-white p-4 shadow-lg sticky top-0 z-100 ">
         <nav className="container mx-auto flex justify-between items-center">
-          <img src="src/NEWWiCySLogotoplinestackedhoriz.png" alt="Logo" style={{ width: '150px', height: 'auto' }} />
+          <img src="public/NEWWiCySLogotoplinestackedhoriz.png" alt="Logo" style={{ width: '150px', height: 'auto' }} />
           <ul
             className="hidden md:flex space-x-6"
             style={{
@@ -217,7 +215,7 @@ const App = () => {
                 </a>
               </div>              
             <div className="flex justify-center md:justify-end">
-                <img src="src/privacy-image.jpg" alt="Privacy Image" className="w-full max-w-sm lg:max-w-md rounded-lg"/>
+                <img src="public/privacy-image.jpg" alt="Privacy Image" className="w-full max-w-sm lg:max-w-md rounded-lg"/>
             </div>
         </div>
     </section>
@@ -274,7 +272,7 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
               <div className="bg-purple-200 p-4 rounded-full mb-4">
-              <img src={goals} alt="Mission" className="w-12 h-12 object-contain" />
+              <img src="/goals.png" alt="Mission" className="w-12 h-12 object-contain" />
               </div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
@@ -294,7 +292,7 @@ const App = () => {
 
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
               <div className="bg-purple-100 p-4 rounded-full mb-4">
-              <img src={notebook} alt="What We Do" className="w-12 h-12 object-contain" /> </div>
+              <img src="/notebook.png" alt="What We Do" className="w-12 h-12 object-contain" /> </div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
   style={{
@@ -312,7 +310,7 @@ const App = () => {
 
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
               <div className="bg-purple-200 p-4 rounded-full mb-4">
-              <img src={communiry} alt="What We Do" className="w-12 h-12 object-contain" /></div>
+              <img src="/commuinty.png" alt="What We Do" className="w-12 h-12 object-contain" /></div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
   style={{
