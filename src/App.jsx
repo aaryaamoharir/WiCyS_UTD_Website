@@ -146,7 +146,7 @@ const App = () => {
 
       <header className="bg-white p-4 shadow-lg sticky top-0 z-100 ">
         <nav className="container mx-auto flex justify-between items-center">
-          <img src="public/NEWWiCySLogotoplinestackedhoriz.png" alt="Logo" style={{ width: '150px', height: 'auto' }} />
+          <img src="/NEWWiCySLogotoplinestackedhoriz.png" alt="Logo" style={{ width: '150px', height: 'auto' }} />
           <ul
             className="hidden md:flex space-x-6"
             style={{
@@ -215,7 +215,7 @@ const App = () => {
                 </a>
               </div>              
             <div className="flex justify-center md:justify-end">
-                <img src="public/privacy-image.jpg" alt="Privacy Image" className="w-full max-w-sm lg:max-w-md rounded-lg"/>
+                <img src="/privacy-image.jpg" alt="Privacy Image" className="w-full max-w-sm lg:max-w-md rounded-lg"/>
             </div>
         </div>
     </section>
