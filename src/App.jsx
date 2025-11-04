@@ -272,7 +272,7 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
               <div className="bg-purple-200 p-4 rounded-full mb-4">
-              <img src="/goal.png" alt="Mission" className="w-12 h-12 object-contain" />
+              <img src="/goal.png" alt="Mission" className="w-12-12 object-contain" />
               </div>
               <h2
   className="text-xl md:text-4xl font-bold text-center mb-4 tracking-wider"
